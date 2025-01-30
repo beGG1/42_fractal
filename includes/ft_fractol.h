@@ -6,7 +6,7 @@
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 22:16:25 by sshabali          #+#    #+#             */
-/*   Updated: 2025/01/11 19:01:31 by sshabali         ###   ########.fr       */
+/*   Updated: 2025/01/30 09:08:40 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,18 @@
 # include "./libft/libft.h"
 # include "./minilibx/mlx.h"
 
+typedef struct s_window
+{
+	void	*mlx;
+	void	*window;
+	int		w;
+	int		h;
+	
+} t_window;
 
+void	init_window(t_window *win, int size_x, int size_y, char *title);
+void	destroy_window(int exit_code, t_window *win);
+int		key_handler(int keycode, t_window *win);
 
+void draw_julia(t_window *win, double c_re, double c_im);
 #endif

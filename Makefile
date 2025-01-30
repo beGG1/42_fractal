@@ -6,7 +6,11 @@ CFLAGS = #-Wall -Werror -Wextra -g
 MLXFLAGS = -L ./includes/minilibx -lmlx -Ilmlx -lXext -lX11
 LIBFT = ./includes/libft/libft.a
 
-SRC = srcs/main.c
+SRC = 	srcs/main.c \
+		srcs/window.c \
+		srcs/handlers.c \
+		srcs/destroy.c \
+		srcs/julia.c
 # srcs/burning.c \
 # srcs/complex_math.c \
 # srcs/hooks.c \

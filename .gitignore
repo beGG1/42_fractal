@@ -1,0 +1,5 @@
+*.o
+fractol
+.vscode
+libft.a
+settings.json

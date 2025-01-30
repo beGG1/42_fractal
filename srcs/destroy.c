@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   destroy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/11 19:07:20 by sshabali          #+#    #+#             */
-/*   Updated: 2025/01/30 09:09:07 by sshabali         ###   ########.fr       */
+/*   Created: 2025/01/30 06:42:48 by sshabali          #+#    #+#             */
+/*   Updated: 2025/01/30 06:45:23 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_fractol.h"
 
-int	main(int argc, char **argv)
+void	destroy_window(int exit_code, t_window *win)
 {
-	t_window *win;
-
-	if (argc == 2)
+	if (win->window && win->mlx)
+		mlx_destroy_window(win->mlx, win->window);
+	if (win->mlx)
 	{
-		init_window(win, 1000, 1000, argv[1]);
-		draw_julia(win, -0.7, 0.27015);
-		// mlx_string_put(win->mlx, win->window, 400, 400, 123, "Hello, World");
-		mlx_key_hook(win->window, key_handler, win);
-		mlx_loop(win->mlx);
+		mlx_loop_end(win->mlx);
+		mlx_destroy_display(win->mlx);
+		free(win->mlx);
 	}
-	return (0);
+	exit(exit_code);
 }

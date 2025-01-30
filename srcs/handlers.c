@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   handlers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/11 19:07:20 by sshabali          #+#    #+#             */
-/*   Updated: 2025/01/30 09:09:07 by sshabali         ###   ########.fr       */
+/*   Created: 2025/01/30 06:27:22 by sshabali          #+#    #+#             */
+/*   Updated: 2025/01/30 06:52:17 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_fractol.h"
+#include "../includes/keys.h"
 
-int	main(int argc, char **argv)
+int	key_handler(int keycode, t_window *win)
 {
-	t_window *win;
-
-	if (argc == 2)
-	{
-		init_window(win, 1000, 1000, argv[1]);
-		draw_julia(win, -0.7, 0.27015);
-		// mlx_string_put(win->mlx, win->window, 400, 400, 123, "Hello, World");
-		mlx_key_hook(win->window, key_handler, win);
-		mlx_loop(win->mlx);
-	}
+	if (keycode == KEY_ESC)
+		destroy_window(0, win);
 	return (0);
 }
