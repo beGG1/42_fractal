@@ -6,7 +6,7 @@
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 06:32:17 by sshabali          #+#    #+#             */
-/*   Updated: 2025/01/30 08:30:24 by sshabali         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:19:07 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,7 @@ void	init_window(t_window *win, int size_x, int size_y, char *title)
 	}
 	win->w = size_x;
 	win->h = size_y;
+	win->move_x = 0.0;
+	win->move_y = 0.0;
+	win->zoom = 1.0;
 }

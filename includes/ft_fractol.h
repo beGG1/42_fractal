@@ -6,7 +6,7 @@
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 22:16:25 by sshabali          #+#    #+#             */
-/*   Updated: 2025/01/30 09:08:40 by sshabali         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:18:50 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ typedef struct s_window
 	void	*window;
 	int		w;
 	int		h;
+	double		move_x;
+	double		move_y;
+	double		zoom;
 	
 } t_window;
 

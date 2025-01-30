@@ -6,7 +6,7 @@
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 06:12:46 by sshabali          #+#    #+#             */
-/*   Updated: 2025/01/30 06:33:33 by sshabali         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:30:25 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 # define KEY_DOWN 65364
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
-# define KEY_PLUS 61
-# define KEY_MINUS 45
+# define KEY_PLUS 107
+# define KEY_MINUS 108
 # define KEY_SPACE 32
 # define KEY_ONE 49
 # define KEY_TWO 50
