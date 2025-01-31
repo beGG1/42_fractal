@@ -6,7 +6,7 @@
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 22:16:25 by sshabali          #+#    #+#             */
-/*   Updated: 2025/01/30 16:18:50 by sshabali         ###   ########.fr       */
+/*   Updated: 2025/01/31 14:37:55 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,6 @@ void	destroy_window(int exit_code, t_window *win);
 int		key_handler(int keycode, t_window *win);
 
 void draw_julia(t_window *win, double c_re, double c_im);
+void draw_mandelbrot(t_window *win);
+void draw_burning_ship(t_window *win);
 #endif
