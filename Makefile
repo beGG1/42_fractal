@@ -23,19 +23,21 @@ all: $(NAME)
 
 $(NAME): $(SRC:.c=.o)
 	$(MAKE) --no-print-directory -C ./includes/libft
-	echo "\033[1m LIBFT done \033[0m"
+	echo "LIBFT done"
 	$(MAKE) --no-print-directory -C ./includes/minilibx
-	echo "\033[1m MiniLibX done \033[0m"
+	echo "MiniLibX done"
 	$(CC) $(CFLAGS) -lm $(SRC) $(LIBFT) $(MLXFLAGS) -o $(NAME)
-	echo "\033[1m Ready to FRACT-OL \033[0m"
+	echo "Ready to FRACT-OL"
 
 clean:
 	$(MAKE) clean -C ./includes/libft
+	$(MAKE) clean -C ./includes/minilibx
 	rm -rf $(SRC:.c=.o)
 	echo "OBJ deleted"
 
 fclean: clean
 	$(MAKE) fclean -C ./includes/libft
+	$(MAKE) clean -C ./includes/minilibx
 	rm -rf $(NAME)
 	echo "$(NAME) deleted"
 

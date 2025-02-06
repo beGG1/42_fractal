@@ -6,7 +6,7 @@
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 06:27:22 by sshabali          #+#    #+#             */
-/*   Updated: 2025/01/31 14:38:26 by sshabali         ###   ########.fr       */
+/*   Updated: 2025/02/06 12:28:44 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int	key_handler(int keycode, t_window *win)
         win->zoom *= 1.1;
     if (keycode == KEY_TWO)
         win->zoom /= 1.1;
-    
+    draw_fractal(win, mandelbrot_pixel);
     //draw_julia(win, -0.7, 0.27015);
-    draw_burning_ship(win);
+    //draw_burning_ship(win);
 	return (0);
 }
