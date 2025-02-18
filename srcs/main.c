@@ -6,26 +6,41 @@
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 11:50:31 by sshabali          #+#    #+#             */
-/*   Updated: 2025/02/06 12:38:12 by sshabali         ###   ########.fr       */
+/*   Updated: 2025/02/18 00:31:27 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "../includes/ft_fractol.h"
 
+void	print_with_error_exit(char *text)
+{
+	int	err;
+
+	err = ft_printf(text);
+	if (err < 0)
+		exit(1);
+}
+
+void	print_info()
+{
+	print_with_error_exit("Avalible sets:\n");
+	print_with_error_exit("1) julia (default values -0.8, 0.156)\n");
+	print_with_error_exit("2) mandelbrot\n");
+	print_with_error_exit("3) burning_ship\n");
+}
+
 int	main(int argc, char **argv)
 {
 	t_window *win;
-
-	win = malloc(sizeof(t_window));
+	
+	print_info();
 	if (argc == 2)
 	{
-		//init_window(win, 1000, 1000, argv[1]);
-		init_window(win);
-		//draw_julia(win, -0.7, 0.27015);
-		// mlx_string_put(win->mlx, win->window, 400, 400, 123, "Hello, World");
-		draw_fractal(win, mandelbrot_pixel);
+		win = malloc(sizeof(t_window));
+		init_window(win, argc, argv);
 		mlx_key_hook(win->window, key_handler, win);
+		mlx_hook(win->window, 17, 0, close_hook, win);
 		mlx_loop(win->mlx);
 	}
 	return (0);
