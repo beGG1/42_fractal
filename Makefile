@@ -10,15 +10,9 @@ SRC = 	srcs/main.c \
 		srcs/window.c \
 		srcs/handlers.c \
 		srcs/destroy.c \
-		srcs/julia.c \
-		srcs/convertr.c
-# srcs/burning.c \
-# srcs/complex_math.c \
-# srcs/hooks.c \
-# srcs/julia.c \
-# srcs/mandelbrot.c \
-# srcs/params.c
-
+		srcs/fractals.c \
+		srcs/convertr.c \
+		srcs/graphics.c
 
 all: $(NAME)
 

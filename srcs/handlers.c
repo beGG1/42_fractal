@@ -6,7 +6,7 @@
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 06:27:22 by sshabali          #+#    #+#             */
-/*   Updated: 2025/02/18 00:50:13 by sshabali         ###   ########.fr       */
+/*   Updated: 2025/02/18 03:46:46 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,16 @@ int	key_handler(int keycode, t_window *win)
 	if (keycode == KEY_ONE)
 		win->zoom *= 1.1;
 	if (keycode == KEY_TWO)
+		win->zoom /= 1.1;
+	fractal_selector(win);
+	return (0);
+}
+
+int	mouse_handler(int button, int x, int y, t_window *win)
+{
+	if (button == 4)
+		win->zoom *= 1.1;
+	else if (button == 5)
 		win->zoom /= 1.1;
 	fractal_selector(win);
 	return (0);
